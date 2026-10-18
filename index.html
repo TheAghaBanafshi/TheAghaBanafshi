@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آقا بنفشی | پروفایل</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d1b3d 50%, #1e1e2e 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: rgba(168,85,247,0.6);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { transform: translateY(-100vh) translateX(50px); opacity: 1; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease;
+        }
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #a855f7;
+            box-shadow: 0 0 40px rgba(168,85,247,0.6), 0 0 80px rgba(168,85,247,0.3);
+            animation: pulseGlow 3s ease-in-out infinite;
+            object-fit: cover;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 40px rgba(168,85,247,0.6), 0 0 80px rgba(168,85,247,0.3); }
+            50% { box-shadow: 0 0 60px rgba(168,85,247,0.9), 0 0 120px rgba(236,72,153,0.5); }
+        }
+
+        .name {
+            font-size: 2.8em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #a855f7, #ec4899, #a855f7);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            margin-bottom: 10px;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .tagline {
+            color: #888;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .badges a { text-decoration: none; transition: transform 0.2s; }
+        .badges a:hover { transform: translateY(-3px); }
+        .badges img { height: 32px; }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .social-btn.github {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border-color: rgba(255,255,255,0.2);
+        }
+        .social-btn.github:hover {
+            background: #333;
+            border-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+        }
+        .social-btn.telegram {
+            background: rgba(38,165,228,0.15);
+            color: #26a5e4;
+            border-color: rgba(38,165,228,0.4);
+        }
+        .social-btn.telegram:hover {
+            background: #26a5e4;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(38,165,228,0.4);
+        }
+
+        .section {
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease;
+            animation-fill-mode: both;
+        }
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(168,85,247,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon { font-size: 1.2em; }
+
+        /* پروژه‌ها */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(168,85,247,0.3);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+        .project-card:hover {
+            background: rgba(168,85,247,0.1);
+            border-color: #a855f7;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(168,85,247,0.3);
+        }
+        .project-card h3 {
+            color: #a855f7;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .project-card p {
+            color: #bbb;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* جام‌ها و نمودارها */
+        .widget {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .widget img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* مهارت‌ها */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        .skill-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .skill-item:hover {
+            background: rgba(168,85,247,0.1);
+            border-color: #a855f7;
+            transform: translateY(-3px);
+        }
+        .skill-item .skill-icon { font-size: 2em; margin-bottom: 10px; }
+        .skill-item .skill-name { font-size: 0.95em; color: #ccc; }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #555;
+            font-size: 0.9em;
+        }
+        .footer .heart {
+            color: #ec4899;
+            animation: heartbeat 1.5s ease infinite;
+            display: inline-block;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .footer a { color: #a855f7; text-decoration: none; }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1e1e2e; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #a855f7, #ec4899);
+            border-radius: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .name { font-size: 2em; }
+            .avatar { width: 140px; height: 140px; }
+            .section-title { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <header class="profile-header">
+            <div class="avatar-wrapper">
+                <img src="https://avatars.githubusercontent.com/u/310891506" 
+                     alt="TheAghaBanafshi" 
+                     class="avatar" />
+            </div>
+            <h1 class="name">آقا بنفشی</h1>
+            <p class="tagline">توسعه‌دهنده | سازنده ابزارهای کاربردی</p>
+
+            <div class="badges">
+                <a href="https://github.com/TheAghaBanafshi?tab=followers">
+                    <img src="https://img.shields.io/github/followers/TheAghaBanafshi?label=Followers&style=for-the-badge&color=a855f7&logo=github" alt="Followers" />
+                </a>
+                <a href="https://github.com/TheAghaBanafshi?tab=repositories">
+                    <img src="https://img.shields.io/github/stars/TheAghaBanafshi?label=Stars&style=for-the-badge&color=a855f7&logo=github" alt="Stars" />
+                </a>
+                <a href="https://github.com/TheAghaBanafshi">
+                    <img src="https://komarev.com/ghpvc/?username=TheAghaBanafshi&label=Views&color=a855f7&style=for-the-badge" alt="Views" />
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/TheAghaBanafshi" class="social-btn github">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://t.me/AghaBanafshi" class="social-btn telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    Telegram
+                </a>
+            </div>
+        </header>
+
+        <!-- پروژه‌ها -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🚀</span>
+                پروژه‌های من
+            </h2>
+            <div class="projects-grid">
+                <a href="https://github.com/TheAghaBanafshi/MCSeverStatus" class="project-card">
+                    <h3><span>🎮</span> MCSeverStatus</h3>
+                    <p>ابزار نمایش وضعیت سرورهای ماینکرفت</p>
+                </a>
+                <a href="https://github.com/TheAghaBanafshi/Purple-Panel" class="project-card">
+                    <h3><span>🟣</span> Purple Panel</h3>
+                    <p>پنل مدیریتی ساخت کانفیگ V2ray</p>
+                </a>
+                <a href="https://github.com/TheAghaBanafshi/RVG-Docker" class="project-card">
+                    <h3><span>🐳</span> RVG-Docker</h3>
+                    <p>دیپلوی پنل RVG بدون بن Railway</p>
+                </a>
+                <a href="https://github.com/TheAghaBanafshi/funkland-V2" class="project-card">
+                    <h3><span>🎵</span> Funkland-V2</h3>
+                    <p>پروژه موزیک Funkland</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- جام‌ها -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🏆</span>
+                جام‌های من
+            </h2>
+            <div class="widget">
+                <img src="https://github-profile-trophy.screw-hand.vercel.app/?username=TheAghaBanafshi&theme=radical&no-frame=true&row=1&column=7&margin-w=10" alt="Trophies" />
+            </div>
+        </section>
+
+        <!-- آمار -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                آمار گیت‌هاب
+            </h2>
+            <div class="widget">
+                <img src="https://github-readme-stats.vercel.app/api?username=TheAghaBanafshi&show_icons=true&theme=radical&locale=fa&hide_border=true&bg_color=1e1e2e&icon_color=a855f7&title_color=a855f7" alt="Stats" />
+            </div>
+            <div class="widget">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheAghaBanafshi&layout=compact&theme=radical&locale=fa&hide_border=true&bg_color=1e1e2e&title_color=a855f7" alt="Top Languages" />
+            </div>
+            <div class="widget">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=TheAghaBanafshi&theme=radical&locale=fa&hide_border=true&background=1e1e2e&ring=a855f7&fire=ec4899&currStreakLabel=a855f7" alt="Streak" />
+            </div>
+        </section>
+
+        <!-- نمودار فعالیت -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📈</span>
+                نمودار فعالیت
+            </h2>
+            <div class="widget">
+                <img src="https://raw.githubusercontent.com/TheAghaBanafshi/TheAghaBanafshi/output/activity-graph.svg" 
+                     alt="Activity Graph" 
+                     onerror="this.outerHTML='<p style=\'text-align:center;color:#666;padding:40px;\'>نمودار فعالیت در حال آماده‌سازی است... لطفاً بعداً مراجعه کنید.</p>'" />
+            </div>
+        </section>
+
+        <!-- مار کامیت‌ها -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🐍</span>
+                مار کامیت‌ها
+            </h2>
+            <div class="widget">
+                <img src="https://raw.githubusercontent.com/TheAghaBanafshi/TheAghaBanafshi/output/github-contribution-grid-snake.svg" 
+                     alt="Snake" 
+                     onerror="this.outerHTML='<p style=\'text-align:center;color:#666;padding:40px;\'>مار کامیت‌ها در حال آماده‌سازی است... لطفاً بعداً مراجعه کنید.</p>'" />
+            </div>
+        </section>
+
+        <!-- مهارت‌ها -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🛠️</span>
+                مهارت‌ها و ابزارها
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">☕</div>
+                    <div class="skill-name">Java</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🐍</div>
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🟨</div>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🌐</div>
+                    <div class="skill-name">HTML/CSS</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔧</div>
+                    <div class="skill-name">Git</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">⚙️</div>
+                    <div class="skill-name">GitHub Actions</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">⛏️</div>
+                    <div class="skill-name">Minecraft</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🐳</div>
+                    <div class="skill-name">Docker</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🚂</div>
+                    <div class="skill-name">Railway</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💻</div>
+                    <div class="skill-name">IntelliJ IDEA</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📝</div>
+                    <div class="skill-name">VS Code</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- فوتر -->
+        <footer class="footer">
+            <p>ساخته شده با <span class="heart">❤️</span> توسط آقا بنفشی</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                <a href="https://github.com/TheAghaBanafshi">GitHub</a> • 
+                <a href="https://t.me/AghaBanafshi">Telegram</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // ذرات پس‌زمینه
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 20 + 's';
+            p.style.animationDuration = (15 + Math.random() * 10) + 's';
+            p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+            particlesContainer.appendChild(p);
+        }
+    </script>
+</body>
+</html>
