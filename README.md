@@ -65,7 +65,7 @@
 <td width="50%">
 
 #### 🎵 Funkland-V2
-پروژه موزیک Funkland
+پروژه موزیک فانک Funkland
 
 <a href="https://github.com/TheAghaBanafshi/funkland-V2">
   <img src="https://github-readme-stats.vercel.app/api/pin/?username=TheAghaBanafshi&repo=funkland-V2&theme=radical&locale=fa&hide_border=true&bg_color=1e1e2e" />
